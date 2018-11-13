@@ -19,7 +19,7 @@ int main()
 }
 #endif
 
-
+#if 0
 #include<stdio.h>
 namespace N1
 {
@@ -35,5 +35,18 @@ int main()
 	printf("%d\n", a);    //想打印出20
 	printf("%d\n", N1::a);//想打印出20
 	Add(1, 2);
+	return 0;
+}
+#endif
+int& Add(int a, int b)
+{
+	int c = a + b;
+	return c;
+}
+int main()
+{
+	int ret = Add(1, 2);
+	Add(3, 4);
+	cout << "Add(1, 2) is :" << ret << endl;
 	return 0;
 }
