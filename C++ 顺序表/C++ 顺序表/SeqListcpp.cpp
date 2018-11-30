@@ -15,10 +15,6 @@ class SeqList
 		return _cout;
 	}
 
-	friend void PrintSeqList(const SeqList<T>& s)
-	{
-		cout << s << endl;
-	}
 public:
 	//¹¹Ôìº¯Êý
 	SeqList(size_t capacity = 10)
@@ -185,8 +181,14 @@ private:
 	size_t _capacity;
 };
 
-
-
+template<class T>
+void PrintSeqList(SeqList<T>& s)
+{
+	//cout << s << endl;
+	for (size_t i = 0; i < s.Size(); ++i)
+		cout << s[i] << " ";
+	cout << endl;
+}
 
 int main()
 {
@@ -212,5 +214,10 @@ int main()
 	SeqList<double> s4 = s2;
 	cout << s3[0] << endl;
 	cout << s3.Find(1) << endl;
+
+	PrintSeqList(s1);
+	PrintSeqList(s2);
+	PrintSeqList(s3);
+	PrintSeqList(s4);
 	return 0;
 }
