@@ -16,6 +16,7 @@ class SeqList
 	}
 
 public:
+	typedef T* Iterator;
 	//构造函数
 	SeqList(size_t capacity = 10)
 		:_pArray(new T[capacity + 3])
@@ -150,12 +151,12 @@ public:
 	}
 
 	/**************************迭代器**********************************/
-	T* begin()
+	Iterator begin()
 	{
 		return _pArray;
 	}
 
-	T* end()
+	Iterator end()
 	{
 		return _pArray + (_size - 1);
 	}
